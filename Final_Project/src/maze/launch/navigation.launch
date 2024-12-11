@@ -1,0 +1,5 @@
+<launch>
+    <node pkg="maze" type="ar_processing.py" name="ar_processing" output="screen"/>
+    <node pkg="maze" type="lidar.py" name="lidar" output="screen"/>
+    <node pkg="maze" type="map_builder.py" name="map_builder" output="screen"/>
+</launch>
