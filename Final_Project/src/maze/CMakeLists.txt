@@ -8,11 +8,12 @@ project(maze)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
+  ar_track_alvar_msgs
   geometry_msgs,
   rospy,
   sensor_msgs,
   std_msgs,
-  tf2_ros
+  tf2_ros,
   visualization_msgs,
 )
 
@@ -73,7 +74,7 @@ find_package(catkin REQUIRED COMPONENTS
 ## Generate added messages and services with any dependencies listed here
 # generate_messages(
 #   DEPENDENCIES
-#   std_msgs  # Or other packages containing msgs
+#   ar_track_alvar_msgs
 # )
 
 ################################################
@@ -108,7 +109,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES maze
-#  CATKIN_DEPENDS geometry_msgs, rospy, sensor_msgs, std_msgs, tf2_ros visualization_msgs,
+#  CATKIN_DEPENDS ar_track_alvar_msgs geometry_msgs, rospy, sensor_msgs, std_msgs, tf2_ros, visualization_msgs,
 #  DEPENDS system_lib
 )
 
