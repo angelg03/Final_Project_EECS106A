@@ -10,6 +10,8 @@ def normalize_quaternion(q):
     :param q: geometry_msgs/Quaternion
     :return: Normalized quaternion
     """
+    rospy.loginfo(f"Raw Quaternion: x={q.x}, y={q.y}, z={q.z}, w={q.w}")
+    
     magnitude = math.sqrt(q.x**2 + q.y**2 + q.z**2 + q.w**2)
     q.x /= magnitude
     q.y /= magnitude
@@ -22,16 +24,19 @@ def ar_callback(msg):
     Callback to process AR tag detections and publish normalized poses.
     """
     for marker in msg.markers:
-        rospy.loginfo(f"Detected AR tag: {marker.id}")
-        
-        # Normalize the quaternion
-        pose = PoseStamped()
-        pose.header = marker.header
-        pose.pose = marker.pose.pose
-        pose.pose.orientation = normalize_quaternion(pose.pose.orientation)
-        
-        # Publish the normalized pose
-        ar_pose_pub.publish(pose)
+        try:
+            rospy.loginfo(f"Detected AR tag: {marker.id}")
+            
+            # Normalize the quaternion
+            pose = PoseStamped()
+            pose.header = marker.header
+            pose.pose = marker.pose.pose
+            pose.pose.orientation = normalize_quaternion(pose.pose.orientation)
+            
+            # Publish the normalized pose
+            ar_pose_pub.publish(pose)
+        except (LookupError):
+            pass
 
 if __name__ == "__main__":
     rospy.init_node("ar_processing")

@@ -17,9 +17,9 @@ add_custom_target(lab4_cam_generate_messages ALL)
 
 
 
-get_filename_component(_filename "/home/cc/ee106a/fa24/class/ee106a-afx/ros_workspaces/lab4/src/lab4_cam/srv/ImageSrv.srv" NAME_WE)
+get_filename_component(_filename "/home/cc/ee106a/fa24/class/ee106a-afx/ros_workspaces/Final_Project/src/lab4_cam/srv/ImageSrv.srv" NAME_WE)
 add_custom_target(_lab4_cam_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "lab4_cam" "/home/cc/ee106a/fa24/class/ee106a-afx/ros_workspaces/lab4/src/lab4_cam/srv/ImageSrv.srv" "sensor_msgs/Image:std_msgs/Header"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "lab4_cam" "/home/cc/ee106a/fa24/class/ee106a-afx/ros_workspaces/Final_Project/src/lab4_cam/srv/ImageSrv.srv" "sensor_msgs/Image:std_msgs/Header"
 )
 
 #
@@ -31,7 +31,7 @@ add_custom_target(_lab4_cam_generate_messages_check_deps_${_filename}
 
 ### Generating Services
 _generate_srv_cpp(lab4_cam
-  "/home/cc/ee106a/fa24/class/ee106a-afx/ros_workspaces/lab4/src/lab4_cam/srv/ImageSrv.srv"
+  "/home/cc/ee106a/fa24/class/ee106a-afx/ros_workspaces/Final_Project/src/lab4_cam/srv/ImageSrv.srv"
   "${MSG_I_FLAGS}"
   "/opt/ros/noetic/share/sensor_msgs/cmake/../msg/Image.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/lab4_cam
@@ -49,7 +49,7 @@ add_custom_target(lab4_cam_generate_messages_cpp
 add_dependencies(lab4_cam_generate_messages lab4_cam_generate_messages_cpp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/cc/ee106a/fa24/class/ee106a-afx/ros_workspaces/lab4/src/lab4_cam/srv/ImageSrv.srv" NAME_WE)
+get_filename_component(_filename "/home/cc/ee106a/fa24/class/ee106a-afx/ros_workspaces/Final_Project/src/lab4_cam/srv/ImageSrv.srv" NAME_WE)
 add_dependencies(lab4_cam_generate_messages_cpp _lab4_cam_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -64,7 +64,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS lab4_cam_generate_messages_cpp)
 
 ### Generating Services
 _generate_srv_eus(lab4_cam
-  "/home/cc/ee106a/fa24/class/ee106a-afx/ros_workspaces/lab4/src/lab4_cam/srv/ImageSrv.srv"
+  "/home/cc/ee106a/fa24/class/ee106a-afx/ros_workspaces/Final_Project/src/lab4_cam/srv/ImageSrv.srv"
   "${MSG_I_FLAGS}"
   "/opt/ros/noetic/share/sensor_msgs/cmake/../msg/Image.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/lab4_cam
@@ -82,7 +82,7 @@ add_custom_target(lab4_cam_generate_messages_eus
 add_dependencies(lab4_cam_generate_messages lab4_cam_generate_messages_eus)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/cc/ee106a/fa24/class/ee106a-afx/ros_workspaces/lab4/src/lab4_cam/srv/ImageSrv.srv" NAME_WE)
+get_filename_component(_filename "/home/cc/ee106a/fa24/class/ee106a-afx/ros_workspaces/Final_Project/src/lab4_cam/srv/ImageSrv.srv" NAME_WE)
 add_dependencies(lab4_cam_generate_messages_eus _lab4_cam_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -97,7 +97,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS lab4_cam_generate_messages_eus)
 
 ### Generating Services
 _generate_srv_lisp(lab4_cam
-  "/home/cc/ee106a/fa24/class/ee106a-afx/ros_workspaces/lab4/src/lab4_cam/srv/ImageSrv.srv"
+  "/home/cc/ee106a/fa24/class/ee106a-afx/ros_workspaces/Final_Project/src/lab4_cam/srv/ImageSrv.srv"
   "${MSG_I_FLAGS}"
   "/opt/ros/noetic/share/sensor_msgs/cmake/../msg/Image.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/lab4_cam
@@ -115,7 +115,7 @@ add_custom_target(lab4_cam_generate_messages_lisp
 add_dependencies(lab4_cam_generate_messages lab4_cam_generate_messages_lisp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/cc/ee106a/fa24/class/ee106a-afx/ros_workspaces/lab4/src/lab4_cam/srv/ImageSrv.srv" NAME_WE)
+get_filename_component(_filename "/home/cc/ee106a/fa24/class/ee106a-afx/ros_workspaces/Final_Project/src/lab4_cam/srv/ImageSrv.srv" NAME_WE)
 add_dependencies(lab4_cam_generate_messages_lisp _lab4_cam_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -130,7 +130,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS lab4_cam_generate_messages_lisp)
 
 ### Generating Services
 _generate_srv_nodejs(lab4_cam
-  "/home/cc/ee106a/fa24/class/ee106a-afx/ros_workspaces/lab4/src/lab4_cam/srv/ImageSrv.srv"
+  "/home/cc/ee106a/fa24/class/ee106a-afx/ros_workspaces/Final_Project/src/lab4_cam/srv/ImageSrv.srv"
   "${MSG_I_FLAGS}"
   "/opt/ros/noetic/share/sensor_msgs/cmake/../msg/Image.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/lab4_cam
@@ -148,7 +148,7 @@ add_custom_target(lab4_cam_generate_messages_nodejs
 add_dependencies(lab4_cam_generate_messages lab4_cam_generate_messages_nodejs)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/cc/ee106a/fa24/class/ee106a-afx/ros_workspaces/lab4/src/lab4_cam/srv/ImageSrv.srv" NAME_WE)
+get_filename_component(_filename "/home/cc/ee106a/fa24/class/ee106a-afx/ros_workspaces/Final_Project/src/lab4_cam/srv/ImageSrv.srv" NAME_WE)
 add_dependencies(lab4_cam_generate_messages_nodejs _lab4_cam_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -163,7 +163,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS lab4_cam_generate_messages_nodejs)
 
 ### Generating Services
 _generate_srv_py(lab4_cam
-  "/home/cc/ee106a/fa24/class/ee106a-afx/ros_workspaces/lab4/src/lab4_cam/srv/ImageSrv.srv"
+  "/home/cc/ee106a/fa24/class/ee106a-afx/ros_workspaces/Final_Project/src/lab4_cam/srv/ImageSrv.srv"
   "${MSG_I_FLAGS}"
   "/opt/ros/noetic/share/sensor_msgs/cmake/../msg/Image.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/lab4_cam
@@ -181,7 +181,7 @@ add_custom_target(lab4_cam_generate_messages_py
 add_dependencies(lab4_cam_generate_messages lab4_cam_generate_messages_py)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/cc/ee106a/fa24/class/ee106a-afx/ros_workspaces/lab4/src/lab4_cam/srv/ImageSrv.srv" NAME_WE)
+get_filename_component(_filename "/home/cc/ee106a/fa24/class/ee106a-afx/ros_workspaces/Final_Project/src/lab4_cam/srv/ImageSrv.srv" NAME_WE)
 add_dependencies(lab4_cam_generate_messages_py _lab4_cam_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
