@@ -431,7 +431,7 @@ ar_track_alvar_SOURCE_DIR:STATIC=/home/cc/ee106a/fa24/class/ee106a-afx/ros_works
 ar_track_alvar_msgs_BINARY_DIR:STATIC=/home/cc/ee106a/fa24/class/ee106a-afx/ros_workspaces/Final_Project/build/ar_track_alvar_msgs
 
 //The directory containing a CMake configuration file for ar_track_alvar_msgs.
-ar_track_alvar_msgs_DIR:PATH=/home/cc/ee106a/fa24/class/ee106a-afx/ros_workspaces/Final_Project/devel/share/ar_track_alvar_msgs/cmake
+ar_track_alvar_msgs_DIR:PATH=/home/cc/ee106a/fa24/class/ee106a-afx/ros_workspaces/lab4/devel/share/ar_track_alvar_msgs/cmake
 
 //Value Computed by CMake
 ar_track_alvar_msgs_SOURCE_DIR:STATIC=/home/cc/ee106a/fa24/class/ee106a-afx/ros_workspaces/Final_Project/src/ar_track_alvar_msgs
