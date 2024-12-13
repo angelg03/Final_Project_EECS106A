@@ -1,6 +1,6 @@
 <launch>
   <!-- Map Server -->
-  <node name="map_server" pkg="map_server" type="map_server" args="$(find ar_nav)/saved_maps/maze_map.yaml" />
+  <node name="map_server" pkg="map_server" type="map_server" args="$(find ar_nav)/saved_maps.yaml" />
   
   <!-- Localization (AMCL) -->
   <include file="$(find ar_nav)/launch/amcl.launch" />
@@ -15,4 +15,5 @@
   <node name="ar_goal_publisher" pkg="ar_nav" type="ar_publisher.py" output="screen">
     <param name="use_sim_time" value="false"/> <!-- Adjust if simulation -->
   </node>
+  <node name="main_nav" pkg="ar_nav" type="main_nav.py" output="screen"></node>
 </launch>
