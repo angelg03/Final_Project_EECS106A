@@ -2,12 +2,6 @@
   <!-- Map Server -->
   <node name="map_server" pkg="map_server" type="map_server" args="$(find ar_nav)/saved_maps.yaml" />
   
-  <!-- Localization (AMCL) -->
-  <include file="$(find ar_nav)/launch/amcl.launch" />
-  
-  <!-- Move Base (Navigation) -->
-  <include file="$(find ar_nav)/launch/move_base.launch" />
-
   <!-- AR Tag Detection -->
   <include file="$(find ar_nav)/launch/ar_tracking.launch" />
 
