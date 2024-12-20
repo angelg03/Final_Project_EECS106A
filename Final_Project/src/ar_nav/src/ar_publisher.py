@@ -1,34 +1,40 @@
 #!/usr/bin/env python3
 import rospy
-import tf2_ros
-import tf2_geometry_msgs
 from geometry_msgs.msg import PoseStamped
 from ar_track_alvar_msgs.msg import AlvarMarkers
 
-class ARTagGoalPublisher:
+class ARTagPublisher:
     def __init__(self):
-        rospy.init_node('ar_tag_goal_publisher', anonymous=True)
+        rospy.init_node('ar_tag_publisher', anonymous=True)
+
+        # Subscriber for AR tag detections
         self.marker_sub = rospy.Subscriber("/ar_pose_marker", AlvarMarkers, self.marker_callback, queue_size=1)
-        self.goal_pub = rospy.Publisher("/move_base_simple/goal", PoseStamped, queue_size=1)
-        self.tf_buffer = tf2_ros.Buffer()
-        self.tf_listener = tf2_ros.TransformListener(self.tf_buffer)
+
+        # Publisher for detected AR tag poses
+        self.tag_pose_pub = rospy.Publisher("/ar_tag_poses", PoseStamped, queue_size=10)
+
+        rospy.loginfo("AR Tag Publisher initialized and listening for AR markers.")
 
     def marker_callback(self, msg):
+        # Check if any markers are detected
         if not msg.markers:
             return
-        marker = msg.markers[0]  # Assuming the first marker is the target
-        camera_pose = PoseStamped()
-        camera_pose.header = marker.header
-        camera_pose.pose = marker.pose.pose
 
-        try:
-            transform = self.tf_buffer.lookup_transform("map", camera_pose.header.frame_id, rospy.Time(0), rospy.Duration(1.0))
-            map_pose = tf2_geometry_msgs.do_transform_pose(camera_pose, transform)
-            self.goal_pub.publish(map_pose)
-            rospy.loginfo("Published AR tag goal to move_base.")
-        except (tf2_ros.LookupException, tf2_ros.ExtrapolationException) as e:
-            rospy.logwarn("TF Exception: %s", str(e))
+        # Publish poses for all detected markers
+        for marker in msg.markers:
+            tag_pose = PoseStamped()
+            tag_pose.header = marker.header  # Maintain the frame from the detection source
+            tag_pose.pose = marker.pose.pose  # Detected pose
+
+            # Log the detected tag ID and pose
+            #rospy.loginfo(f"Detected AR Tag {marker.id}: Pose = {tag_pose.pose}")
+
+            # Publish the pose
+            self.tag_pose_pub.publish(tag_pose)
 
 if __name__ == "__main__":
-    node = ARTagGoalPublisher()
-    rospy.spin()
+    try:
+        ARTagPublisher()
+        rospy.spin()
+    except rospy.ROSInterruptException:
+        pass

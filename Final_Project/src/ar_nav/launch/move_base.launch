@@ -1,6 +1,0 @@
-<launch>
-  <node pkg="move_base" type="move_base" name="move_base" output="screen">
-    <!-- Optionally load parameters -->
-    <!-- <rosparam file="$(find ar_nav)/config/move_base_params.yaml" command="load"/> -->
-  </node>
-</launch>
